@@ -23,16 +23,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install modules
-        run: yarn install
-      - name: Compile contracts
-        run: yarn compile
       - name: Setup .npmrc file to publish to GitHub Packages
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@niffl3rreturns'
+      - name: Install modules
+        run: yarn install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Compile contracts
+        run: yarn compile
       - name: Publish to GitHub Packages
         run: npm publish
         env:
