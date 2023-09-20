@@ -1,8 +1,7 @@
 {
-  "name": "@pooltogether/pooltogether-rng-contracts",
-  "author": "PoolTogether, Inc.",
-  "version": "1.5.3",
-  "description": "PoolTogether RNG Service Smart Contracts",
+  "name": "@niffl3rreturns/n3r-rng-contracts",
+  "version": "1.0.0",
+  "description": "N3R RNG Service Smart Contracts",
   "license": "GPL-3.0",
   "main": "index.js",
   "scripts": {
@@ -21,12 +20,10 @@
     "clean-test": "rm -rf deployments/hardhatevm_31337 test-results.xml",
     "format": "prettier --config .prettierrc --write \"**/*.*.{ts,js}\" \"contracts/**/*.sol\"",
     "format:file": "prettier --config .prettierrc --write",
-    "prepack": "rm -rf artifacts cache && hardhat compile",
-    "etherscan-verify": "hardhat etherscan-verify --solc-input --api-key $ETHERSCAN_API_KEY --network",
-    "postpublish": "PACKAGE_VERSION=$(./scripts/package-version.sh) && git tag -ae v$PACKAGE_VERSION && git push --tags"
+    "etherscan-verify": "hardhat etherscan-verify --solc-input --api-key $ETHERSCAN_API_KEY --network"
   },
   "dependencies": {
-    "@pooltogether/owner-manager-contracts": "1.1.0"
+    "@niffl3rreturns/owner-manager-contracts": "^1.0.0"
   },
   "devDependencies": {
     "@chainlink/contracts": "0.4.0",
